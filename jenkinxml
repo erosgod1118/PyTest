@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="my_suite" errors="1" failures="4" skipped="2" tests="11" time="0.061" timestamp="2024-11-29T04:39:52.990653-05:00" hostname="ubuntu"><testcase classname="test_example" name="test_ok" time="0.000" /><testcase classname="test_example" name="test_fail" time="0.000"><failure message="assert 0">def test_fail():
+&gt;       assert 0
+E       assert 0
+
+test_example.py:11: AssertionError</failure></testcase><testcase classname="test_example" name="test_error" time="0.000"><error message="failed on setup with &quot;assert 0&quot;">@pytest.fixture
+    def error_fixture():
+&gt;       assert 0
+E       assert 0
+
+test_example.py:5: AssertionError</error></testcase><testcase classname="test_example" name="test_skip" time="0.000"><skipped type="pytest.skip" message="skipping this test">/home/erosgod11181992/Work/PyTest/test_example.py:17: skipping this test</skipped></testcase><testcase classname="test_example" name="test_xfail" time="0.000"><skipped type="pytest.xfail" message="xfailing this test" /></testcase><testcase classname="test_example" name="test_xpass" time="0.000" /><testcase classname="test_function" name="test_function" time="0.000"><properties><property name="testsuite_id" value="1505" /></properties></testcase><testcase classname="test_verbosity_example" name="test_ok" time="0.000" /><testcase classname="test_verbosity_example" name="test_words_fail" time="0.001"><failure message="AssertionError: assert ['banana', 'a...elon', 'kiwi'] == ['banana', 'a...elon', 'kiwi']&#10;  &#10;  At index 2 diff: 'grapes' != 'orange'&#10;  Use -v to get more diff">def test_words_fail():
+        fruits1 = ["banana", "apple", "grapes", "melon", "kiwi"]
+        fruits2 = ["banana", "apple", "orange", "melon", "kiwi"]
+    
+&gt;       assert fruits1 == fruits2
+E       AssertionError: assert ['banana', 'a...elon', 'kiwi'] == ['banana', 'a...elon', 'kiwi']
+E         
+E         At index 2 diff: 'grapes' != 'orange'
+E         Use -v to get more diff
+
+test_verbosity_example.py:8: AssertionError</failure></testcase><testcase classname="test_verbosity_example" name="test_numbers_fail" time="0.001"><failure message="AssertionError: assert {'0': 0, '1':..., '3': 3, ...} == {'0': 0, '10'...'30': 30, ...}&#10;  &#10;  Omitting 1 identical items, use -vv to show&#10;  Left contains 4 more items:&#10;  {'1': 1, '2': 2, '3': 3, '4': 4}&#10;  Right contains 4 more items:&#10;  {'10': 10, '20': 20, '30': 30, '40': 40}&#10;  Use -v to get more diff">def test_numbers_fail():
+        number_to_text1 = {str(x): x for x in range(5)}
+        number_to_text2 = {str(x * 10): x * 10 for x in range(5)}
+    
+&gt;       assert number_to_text1 == number_to_text2
+E       AssertionError: assert {'0': 0, '1':..., '3': 3, ...} == {'0': 0, '10'...'30': 30, ...}
+E         
+E         Omitting 1 identical items, use -vv to show
+E         Left contains 4 more items:
+E         {'1': 1, '2': 2, '3': 3, '4': 4}
+E         Right contains 4 more items:
+E         {'10': 10, '20': 20, '30': 30, '40': 40}
+E         Use -v to get more diff
+
+test_verbosity_example.py:14: AssertionError</failure></testcase><testcase classname="test_verbosity_example" name="test_long_text_fail" time="0.000"><failure message="AssertionError: assert 'hello world' in 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ips... sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet '">def test_long_text_fail():
+        long_text = "Lorem ipsum dolor sit amet " * 10
+&gt;       assert "hello world" in long_text
+E       AssertionError: assert 'hello world' in 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ips... sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet '
+
+test_verbosity_example.py:18: AssertionError</failure></testcase></testsuite></testsuites>
